@@ -41,23 +41,33 @@
                     <p class="lead">This is Part 1.2</p>
                 </div>
                 <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <button name="1.2.1" class="btn btn-success btn-block" data-sql="SELECT COUNT(&#42;) AS employeeStart19910501 FROM employees WHERE hire_date = '1991-05-01'" onclick="reply_click(this)">1.2.1</button>
-                    <button name="1.2.2" class="btn btn-success btn-block" data-sql="SELECT emp_id , COUNT(title) AS ttlNumTitle FROM titles GROUP BY emp_id HAVING COUNT(title) &gt; 2 LIMIT 100" onclick="reply_click(this)">1.2.2</button>
-                    <button name="1.2.3" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name,birth_date, gender, hire_date  FROM employees WHERE gender LIKE '&#37;F&#37;'LIMIT 100" onclick="reply_click(this)">1.2.3</button>
-                    <button name="1.2.4" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name, hire_date FROM employees WHERE hire_date &lt; '1986-01-01' AND last_name LIKE 'Simmel' ORDER BY hire_date DESC" onclick="reply_click(this)">1.2.4</button>
-                    <button name="1.2.5" class="btn btn-success btn-block" data-sql="SELECT COUNT(last_name) AS totalWithB FROM employees  WHERE last_name LIKE 'B&#37;'" onclick="reply_click(this)">1.2.5</button>
+                    <button name="1.2.1" class="btn btn-success btn-block" data-sql="SELECT COUNT(&#42;) AS employeeStart19910501 FROM employees WHERE hire_date = '1991-05-01'"
+                        onclick="reply_click(this)">1.2.1</button>
+                    <button name="1.2.2" class="btn btn-success btn-block" data-sql="SELECT emp_id , COUNT(title) AS ttlNumTitle FROM titles GROUP BY emp_id HAVING COUNT(title) &gt; 2 LIMIT 100" 
+                        onclick="reply_click(this)">1.2.2</button>
+                    <button name="1.2.3" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name,birth_date, gender, hire_date  FROM employees WHERE gender LIKE '&#37;F&#37;'LIMIT 100"
+                        onclick="reply_click(this)">1.2.3</button>
+                    <button name="1.2.4" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name, hire_date FROM employees WHERE hire_date &lt; '1986-01-01' AND last_name LIKE 'Simmel' ORDER BY hire_date DESC" 
+                        onclick="reply_click(this)">1.2.4</button>
+                    <button name="1.2.5" class="btn btn-success btn-block" data-sql="SELECT COUNT(last_name) AS totalWithB FROM employees  WHERE last_name LIKE 'B&#37;'" 
+                        onclick="reply_click(this)">1.2.5</button>
                     <button name="1.2.6" class="btn btn-success btn-block" data-sql="CREATE TABLE emp_training (
                         trainer_no INTEGER PRIMARY KEY AUTOINCREMENT,
                         first_name varchar(30) NOT NULL,
                         last_name varchar(30) NOT NULL,
-                        t_module varchar(20))" onclick="reply_click(this)">1.2.6</button>
+                        t_module varchar(20))" 
+                        onclick="reply_click(this)">1.2.6</button>
                     <button name="1.2.7" class="btn btn-success btn-block" data-sql="INSERT INTO emp_training (first_name,last_name,t_module) 
                         VALUES ('Joe','Bloggs','Google Docs');
                         INSERT INTO emp_training (first_name,last_name,t_module) 
-                        VALUES ('Fred','Bloggs','Google Sheets')" onclick="reply_click(this)">1.2.7</button>
-                    <button name="1.2.8" class="btn btn-success btn-block" data-sql="DROP TABLE IF EXISTS emp_training" onclick="reply_click(this)">1.2.8</button>
-                    <button name="1.2.9" class="btn btn-success btn-block" data-sql="ALTER TABLE employees ADD email_address varchar(20)" onclick="reply_click(this)">1.2.9</button>
-                    <button name="1.2.10" class="btn btn-success btn-block" data-sql="UPDATE employees SET email_address = 'gfacello@gmail.com' WHERE emp_id &#61; 10001" onclick="reply_click(this)">1.2.10</button>
+                        VALUES ('Fred','Bloggs','Google Sheets')"
+                        onclick="reply_click(this)">1.2.7</button>
+                    <button name="1.2.8" class="btn btn-success btn-block" data-sql="DROP TABLE IF EXISTS emp_training" 
+                        onclick="reply_click(this)">1.2.8</button>
+                    <button name="1.2.9" class="btn btn-success btn-block" data-sql="ALTER TABLE employees ADD email_address varchar(20)" 
+                        onclick="reply_click(this)">1.2.9</button>
+                    <button name="1.2.10" class="btn btn-success btn-block" data-sql="UPDATE employees SET email_address = 'gfacello@gmail.com' WHERE emp_id &#61; 10001"
+                        onclick="reply_click(this)">1.2.10</button>
                 </div>
                 <div class="col-lg-10 order-2 border-success">
                     <textarea id="commands" class="mb-5">TEXT</textarea>
