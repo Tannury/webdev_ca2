@@ -26,9 +26,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="part1.1.html">Part 1.1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="part1.2.html">Part 1.2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="part1.3.html">Part 1.3</a></li>
+                        <li class="nav-item"><a class="nav-link " href="Part1.1.html">Part 1.1</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="Part1.2.html">Part 1.2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Part1.3.html">Part 1.3</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,14 +38,26 @@
             <div class="row">
                 <div class="col-lg-12 text-center mt-5">
                     <h1>CA2: Data Manipulation & Validation</h1>
-                    <p class="lead">This is Part 1.1</p>
+                    <p class="lead">This is Part 1.2</p>
                 </div>
                 <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <button name="1.1.1" class="btn btn-success btn-block" data-sql="SELECT &#42; FROM departments" onclick="reply_click(this)">1.1.1</button>
-                    <button name="1.1.2" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name FROM employees LIMIT 100" onclick="reply_click(this)">1.1.2</button>
-                    <button name="1.1.3" class="btn btn-success btn-block" data-sql="SELECT title FROM titles LIMIT 100" onclick="reply_click(this)">1.1.3</button>
-                    <button name="1.1.4" class="btn btn-success btn-block" data-sql="SELECT DISTINCT title FROM titles ORDER BY title ASC" onclick="reply_click(this)">1.1.4</button>
-                    <button name="1.1.5" class="btn btn-success btn-block" data-sql="SELECT &#42; FROM employees ORDER BY first_name, last_name ASC LIMIT 1000" onclick="reply_click(this)">1.1.5</button>
+                    <button name="1.2.1" class="btn btn-success btn-block" data-sql="SELECT COUNT(&#42;) AS employeeStart19910501 FROM employees WHERE hire_date = '1991-05-01'" onclick="reply_click(this)">1.2.1</button>
+                    <button name="1.2.2" class="btn btn-success btn-block" data-sql="SELECT emp_id , COUNT(title) AS ttlNumTitle FROM titles GROUP BY emp_id HAVING COUNT(title) &gt; 2 LIMIT 100" onclick="reply_click(this)">1.2.2</button>
+                    <button name="1.2.3" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name,birth_date, gender, hire_date  FROM employees WHERE gender LIKE '&#37;F&#37;'LIMIT 100" onclick="reply_click(this)">1.2.3</button>
+                    <button name="1.2.4" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name, hire_date FROM employees WHERE hire_date &lt; '1986-01-01' AND last_name LIKE 'Simmel' ORDER BY hire_date DESC" onclick="reply_click(this)">1.2.4</button>
+                    <button name="1.2.5" class="btn btn-success btn-block" data-sql="SELECT COUNT(last_name) AS totalWithB FROM employees  WHERE last_name LIKE 'B&#37;'" onclick="reply_click(this)">1.2.5</button>
+                    <button name="1.2.6" class="btn btn-success btn-block" data-sql="CREATE TABLE emp_training (
+                        trainer_no INTEGER PRIMARY KEY AUTOINCREMENT,
+                        first_name varchar(30) NOT NULL,
+                        last_name varchar(30) NOT NULL,
+                        t_module varchar(20))" onclick="reply_click(this)">1.2.6</button>
+                    <button name="1.2.7" class="btn btn-success btn-block" data-sql="INSERT INTO emp_training (first_name,last_name,t_module) 
+                        VALUES ('Joe','Bloggs','Google Docs');
+                        INSERT INTO emp_training (first_name,last_name,t_module) 
+                        VALUES ('Fred','Bloggs','Google Sheets')" onclick="reply_click(this)">1.2.7</button>
+                    <button name="1.2.8" class="btn btn-success btn-block" data-sql="DROP TABLE IF EXISTS emp_training" onclick="reply_click(this)">1.2.8</button>
+                    <button name="1.2.9" class="btn btn-success btn-block" data-sql="ALTER TABLE employees ADD email_address varchar(20)" onclick="reply_click(this)">1.2.9</button>
+                    <button name="1.2.10" class="btn btn-success btn-block" data-sql="UPDATE employees SET email_address = 'gfacello@gmail.com' WHERE emp_id &#61; 10001" onclick="reply_click(this)">1.2.10</button>
                 </div>
                 <div class="col-lg-10 order-2 border-success">
                     <textarea id="commands" class="mb-5">TEXT</textarea>
